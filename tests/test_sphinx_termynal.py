@@ -19,7 +19,49 @@ def document():
     return document
 
 
-def test_termynal_directive(mocker):
+@pytest.mark.parametrize(
+    "content, expected_html",
+    [
+        (
+            ['$ > < & " '],
+            (
+                '<div class="termy" data-termynal data-ty-macos data-ty-title="bash">\n'
+                '<span data-ty="input"> &gt; &lt; &amp; &quot;</span>\n'
+                "</div>\n"
+            ),
+        ),
+        (
+            [
+                "$ pip install \\",
+                "sphinx-termynal \\",
+                "another_package",
+                "-->",
+                "Done",
+            ],
+            (
+                '<div class="termy" data-termynal data-ty-macos data-ty-title="bash">\n'
+                '<span data-ty="input"> pip install \</span>\n'
+                '<span data-ty="input" data-ty-prompt="&gt;"> sphinx-termynal \</span>\n'
+                '<span data-ty="input" data-ty-prompt="&gt;"> another_package</span>\n'
+                '<span data-ty="progress"></span>\n'
+                "<span data-ty>Done</span>\n"
+                "</div>\n"
+            ),
+        ),
+        (
+            ["$ pip install \\", "sphinx-termynal", "-->", "Done"],
+            (
+                '<div class="termy" data-termynal data-ty-macos data-ty-title="bash">\n'
+                '<span data-ty="input"> pip install \</span>\n'
+                '<span data-ty="input" data-ty-prompt="&gt;"> sphinx-termynal</span>\n'
+                '<span data-ty="progress"></span>\n'
+                "<span data-ty>Done</span>\n"
+                "</div>\n"
+            ),
+        ),
+    ],
+)
+def test_termynal_directive(mocker, content, expected_html):
     """Test the TermynalDirective output."""
     # Mock the state and state_machine
     state_machine = mocker.Mock()
@@ -29,7 +71,7 @@ def test_termynal_directive(mocker):
         name="termynal",
         arguments=[],
         options={},
-        content=["$ pip install sphinx-termynal", "-->", "Done"],
+        content=content,
         lineno=1,
         content_offset=0,
         block_text="",
@@ -42,13 +84,6 @@ def test_termynal_directive(mocker):
 
     # Check the raw HTML content
     raw_html_node = result[0]
-    expected_html = (
-        '<div class="termy" data-termynal data-ty-macos data-ty-title="bash">\n'
-        '<span data-ty="input"> pip install sphinx-termynal</span>\n'
-        '<span data-ty="progress"></span>\n'
-        "<span data-ty>Done</span>\n"
-        "</div>\n"
-    )
     assert isinstance(raw_html_node, nodes.raw)
     assert raw_html_node.astext() == expected_html
 

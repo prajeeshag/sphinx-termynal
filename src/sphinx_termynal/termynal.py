@@ -7,6 +7,14 @@ from sphinx.util.docutils import SphinxDirective
 from sphinx.util.fileutil import copy_asset
 
 
+def _escape(txt: str) -> str:
+    txt = txt.replace("&", "&amp;")
+    txt = txt.replace("<", "&lt;")
+    txt = txt.replace(">", "&gt;")
+    txt = txt.replace('"', "&quot;")
+    return txt  # noqa:RET504
+
+
 class TermynalDirective(SphinxDirective):
     has_content = True
 
@@ -14,14 +22,22 @@ class TermynalDirective(SphinxDirective):
         content = (
             '<div class="termy" data-termynal data-ty-macos data-ty-title="bash">\n'
         )
+        input_continue = False
         for line in self.content:
             line = line.strip()
+            eline = _escape(line)
             if line.startswith("$"):
-                content += f'<span data-ty="input">{line[1:]}</span>\n'
+                content += f'<span data-ty="input">{eline[1:]}</span>\n'
+                input_continue = line.endswith("\\")
             elif line.startswith("-->"):
                 content += '<span data-ty="progress"></span>\n'
+            elif input_continue:
+                content += (
+                    f'<span data-ty="input" data-ty-prompt="&gt;"> {eline}</span>\n'
+                )
+                input_continue = line.endswith("\\")
             else:
-                content += f"<span data-ty>{line}</span>\n"
+                content += f"<span data-ty>{eline}</span>\n"
         content += "</div>\n"
         raw_html_node = nodes.raw("", content, format="html")
         return [raw_html_node]
