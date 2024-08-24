@@ -40,8 +40,8 @@ def document():
             ],
             (
                 '<div class="termy" data-termynal data-ty-macos data-ty-title="bash">\n'
-                '<span data-ty="input"> pip install \</span>\n'
-                '<span data-ty="input" data-ty-prompt="&gt;"> sphinx-termynal \</span>\n'
+                '<span data-ty="input"> pip install \\</span>\n'
+                '<span data-ty="input" data-ty-prompt="&gt;"> sphinx-termynal \\</span>\n'
                 '<span data-ty="input" data-ty-prompt="&gt;"> another_package</span>\n'
                 '<span data-ty="progress"></span>\n'
                 "<span data-ty>Done</span>\n"
@@ -52,7 +52,7 @@ def document():
             ["$ pip install \\", "sphinx-termynal", "-->", "Done"],
             (
                 '<div class="termy" data-termynal data-ty-macos data-ty-title="bash">\n'
-                '<span data-ty="input"> pip install \</span>\n'
+                '<span data-ty="input"> pip install \\</span>\n'
                 '<span data-ty="input" data-ty-prompt="&gt;"> sphinx-termynal</span>\n'
                 '<span data-ty="progress"></span>\n'
                 "<span data-ty>Done</span>\n"
