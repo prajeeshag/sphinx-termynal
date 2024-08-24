@@ -316,6 +316,9 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-multi-line-command">Example: Multi-line command</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-special-characters">Example: Special characters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#credits">Credits</a></li>
 </ul>
             </nav>
         </div>
@@ -329,6 +332,10 @@ document.write(`
                   
   <section id="sphinx-termynal">
 <h1>Sphinx Termynal<a class="headerlink" href="#sphinx-termynal" title="Link to this heading">#</a></h1>
+<p><img alt="PyPI - Version" src="https://img.shields.io/pypi/v/sphinx-termynal" />
+<img alt="Test Status" src="https://github.com/prajeeshag/sphinx-termynal/actions/workflows/test.yml/badge.svg" />
+<a class="reference external" href="https://codecov.io/gh/prajeeshag/sphinx-termynal"><img alt="codecov" src="https://codecov.io/gh/prajeeshag/sphinx-termynal/graph/badge.svg?token=UNNUW30IQL" /></a>
+<img alt="Doc Build Status" src="https://github.com/prajeeshag/sphinx-termynal/actions/workflows/build-docs.yml/badge.svg" /></p>
 <p>Create animated terminal window in your <a class="reference external" href="https://www.sphinx-doc.org">Sphinx</a> documentation.</p>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
@@ -387,6 +394,72 @@ MyST</label><div class="sd-tab-content docutils">
 <li><p>Everything else is rendered as it is.</p></li>
 </ul>
 </section>
+<section id="example-multi-line-command">
+<h2>Example: Multi-line command<a class="headerlink" href="#example-multi-line-command" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+reST</label><div class="sd-tab-content docutils">
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">   ..</span> <span class="ow">termynal</span><span class="p">::</span> 
+      $ pip install sphinx-termynal \
+      sphinx \
+      numpy
+      --&gt;
+      done
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+MyST</label><div class="sd-tab-content docutils">
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>   ```{termynal}
+      $ pip install sphinx-termynal \
+      sphinx \
+      numpy
+      --&gt;
+      done
+   ```
+</pre></div>
+</div>
+</div>
+</div>
+<div class="termy" data-termynal data-ty-macos data-ty-title="bash">
+<span data-ty="input"> pip install sphinx-termynal \</span>
+<span data-ty="input" data-ty-prompt="&gt;"> sphinx \</span>
+<span data-ty="input" data-ty-prompt="&gt;"> numpy</span>
+<span data-ty="progress"></span>
+<span data-ty>done</span>
+</div>
+</section>
+<section id="example-special-characters">
+<h2>Example: Special characters<a class="headerlink" href="#example-special-characters" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+reST</label><div class="sd-tab-content docutils">
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">   ..</span> <span class="ow">termynal</span><span class="p">::</span> 
+      $ &lt; &gt; &amp; &quot; &#39;
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+MyST</label><div class="sd-tab-content docutils">
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>   ```{termynal}
+      $ &lt; &gt; &amp; &quot; &#39;
+   ```
+</pre></div>
+</div>
+</div>
+</div>
+<div class="termy" data-termynal data-ty-macos data-ty-title="bash">
+<span data-ty="input"> &lt; &gt; &amp; &quot; '</span>
+</div>
+</section>
+<section id="credits">
+<h2>Credits<a class="headerlink" href="#credits" title="Link to this heading">#</a></h2>
+<p>Thanks <a class="reference external" href="https://github.com/ines/termynal">ines</a>, <a class="reference external" href="https://github.com/termynal/termynal.py">termynal.py</a></p>
+</section>
 </section>
 
 
@@ -418,6 +491,9 @@ MyST</label><div class="sd-tab-content docutils">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-multi-line-command">Example: Multi-line command</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-special-characters">Example: Special characters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#credits">Credits</a></li>
 </ul>
   </nav></div>
 
