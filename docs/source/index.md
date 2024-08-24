@@ -98,3 +98,27 @@ This will produce the following terminal animation:
    -->
    done
 ```
+
+## Example: Special characters
+
+::::{tab-set}
+
+:::{tab-item} reST
+```{code-block} rst
+   .. termynal:: 
+      $ < > & " '
+```
+:::
+
+:::{tab-item} MyST
+````{code-block} md
+   ```{termynal}
+      $ < > & " '
+   ```
+````
+:::
+::::
+
+```{termynal}
+   $ < > & " '
+```
