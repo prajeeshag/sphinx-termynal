@@ -1,0 +1,15 @@
+repos:
+  - repo: local
+    hooks:
+      - id: run-tox
+        name: Run Tox
+        entry: tox
+        language: system
+        pass_filenames: false
+        stages:
+          - push
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v3.29.0 # Check for the latest version
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]
