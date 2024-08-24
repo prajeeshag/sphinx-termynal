@@ -41,4 +41,4 @@ This will produce the following terminal animation:
 
 ## Credits
 
-Thanks [ines](https://github.com/ines/termynal) [termynal.py](https://github.com/termynal/termynal.py)
+Thanks [ines](https://github.com/ines/termynal), [termynal.py](https://github.com/termynal/termynal.py)
