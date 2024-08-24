@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools >= 61.0", "wheel", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sphinx-termynal"
+dynamic = ["version"]
+description = "A lightweight and modern animated terminal window for Sphinx"
+authors = [{ name = "Prajeesh Ag", email = "prajeeshag@gmail.com" }]
+license = { file = "LICENSE" }
+readme = "README.md"
+dependencies = ["sphinx"]
+
+[project.urls]
+homepage = "https://prajeeshag.github.io/sphinx-termynal"
+repository = "https://github.com/prajeeshag/sphinx-termynal"
+documentation = "https://prajeeshag.github.io/sphinx-termynal"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["tests", "docs"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools_scm]
+version_scheme = "guess-next-dev"
+local_scheme = "node-and-timestamp"
+
+[tool.setuptools.package-data]
+"sphinx_termynal" = ["static/*"]
