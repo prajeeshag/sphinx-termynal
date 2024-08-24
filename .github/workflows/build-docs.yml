@@ -2,31 +2,48 @@ name: Build Docs
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches:
+      - main  
   push:
     branches:
-      - main  # trigger CI on pushes to the main branch
+      - main  
 
 jobs:
   build-docs:
     runs-on: ubuntu-latest
-
+    permissions:
+      pull-requests: read
+    # Set job outputs to values from filter step
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          docs:
+            - docs/**
+            - requirements-doc.txt
+            - pyproject.toml
+            - tox.ini
+            - .github/workflows/build-docs.yml
 
-      - name: Install tox
-        run: pip install tox>=4
+    - uses: actions/setup-python@v5
+      if: steps.filter.outputs.docs == 'true'
+      with:
+        python-version: '3.12'
 
-      - name: Build the documentation using tox
-        run: tox -e docs
+    - name: Install tox and Build documentation
+      if: steps.filter.outputs.docs == 'true'
+      run: |
+        pip install tox>=4
+        tox -e docs
 
-      - name: Deploy to GitHub Pages
-        if: success()
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/_build/html
+    - name: Deploy to GitHub Pages
+      if: steps.filter.outputs.docs == 'true' && success()
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: docs/_build/html
 
       

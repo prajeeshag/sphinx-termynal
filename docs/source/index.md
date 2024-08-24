@@ -1,6 +1,6 @@
 
 # Sphinx Termynal
-A lightweight and modern animated terminal window. Built for [Sphinx](https://www.sphinx-doc.org)
+Create animated terminal window in your [Sphinx](https://www.sphinx-doc.org) documentation.
 
 ## Installation
 ``` {code-block} console
@@ -19,7 +19,8 @@ A lightweight and modern animated terminal window. Built for [Sphinx](https://ww
 ```
 
 2. **Use the extension in your documentation:**
-You can now use it in your `.rst` files. For example:
+
+You can now use it in your documentation files. For example:
 
 ::::{tab-set}
 

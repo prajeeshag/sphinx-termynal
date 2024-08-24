@@ -7,8 +7,7 @@
 
 ![Animation1](./animation1.gif)
 
-A lightweight and modern animated terminal window.
-Built for [sphinx](https://www.sphinx-doc.org).
+Create animated terminal window in your [Sphinx](https://www.sphinx-doc.org) documentation.
 
 ## Installation
 
@@ -39,3 +38,7 @@ You can now use it in your .rst files. For example:
 This will produce the following terminal animation:
 
 ![Animation1](./animation1.gif)
+
+## Credits
+
+Thanks [ines](https://github.com/ines/termynal) [termynal.py](https://github.com/termynal/termynal.py)
