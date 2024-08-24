@@ -1,0 +1,32 @@
+name: Build Docs
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main  # trigger CI on pushes to the main branch
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install tox
+        run: pip install tox>=4
+
+      - name: Build the documentation using tox
+        run: tox -e docs
+
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/_build/html
+
+      

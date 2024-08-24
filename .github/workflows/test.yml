@@ -1,0 +1,43 @@
+name: Test 
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main  
+  push:
+    branches:
+      - main  
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    # Required permissions
+    permissions:
+      pull-requests: read
+    # Set job outputs to values from filter step
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          src:
+            - src/**
+            - tests/**
+            - requirements-test.txt
+            - pyproject.toml
+            - tox.ini
+            - .github/workflows/test.yml
+
+    - name: Set up Python
+      if: steps.filter.outputs.src == 'true'
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Install tox and run tests
+      if: steps.filter.outputs.src == 'true'
+      run: |
+          pip install tox>=4
+          tox

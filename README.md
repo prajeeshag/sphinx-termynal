@@ -1,5 +1,8 @@
 # Sphinx Termynal
 
+![Test Status](https://github.com/prajeeshag/sphinx-termynal/actions/workflows/test.yml/badge.svg)
+![Doc Build Status](https://github.com/prajeeshag/sphinx-termynal/actions/workflows/build-docs.yml/badge.svg)
+
 ![Animation1](./animation1.gif)
 
 A lightweight and modern animated terminal window.
