@@ -8,8 +8,19 @@ repos:
         pass_filenames: false
         stages:
           - push
-  - repo: https://github.com/commitizen-tools/commitizen
-    rev: v3.29.0 # Check for the latest version
-    hooks:
+
       - id: commitizen
+        name: commitizen check
+        entry: cz check
+        args: [--allow-abort, --commit-msg-file]
         stages: [commit-msg]
+        language: system
+        minimum_pre_commit_version: "1.4.3"
+
+      - id: conventional-gitmoji
+        name: gitmojify
+        entry: gitmojify
+        args: [--commit-msg-file]
+        stages: [commit-msg]
+        language: system
+        minimum_pre_commit_version: "1.4.3"

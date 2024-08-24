@@ -29,3 +29,6 @@ local_scheme = "node-and-timestamp"
 
 [tool.setuptools.package-data]
 "sphinx_termynal" = ["static/*"]
+
+[tool.commitizen]
+name = "cz_gitmoji"

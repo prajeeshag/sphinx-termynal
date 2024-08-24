@@ -1,2 +1,4 @@
 -r "requirements-test.txt"
 pre-commit
+commitizen
+cz-conventional-gitmoji
