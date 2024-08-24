@@ -1,5 +1,7 @@
 # Sphinx Termynal
 
+![Animation1](./animation1.gif)
+
 A lightweight and modern animated terminal window.
 Built for [sphinx](https://www.sphinx-doc.org).
 
