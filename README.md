@@ -1,7 +1,9 @@
 # Sphinx Termynal
 
+![PyPI - Version](https://img.shields.io/pypi/v/sphinx-termynal)
 ![Test Status](https://github.com/prajeeshag/sphinx-termynal/actions/workflows/test.yml/badge.svg)
 ![Doc Build Status](https://github.com/prajeeshag/sphinx-termynal/actions/workflows/build-docs.yml/badge.svg)
+
 
 ![Animation1](./animation1.gif)
 
