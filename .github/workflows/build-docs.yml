@@ -12,6 +12,7 @@ jobs:
     permissions:
       pull-requests: read
       contents: write
+      id-token: write
     # Set job outputs to values from filter step
     steps:
     - uses: actions/checkout@v4
