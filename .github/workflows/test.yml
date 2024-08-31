@@ -37,7 +37,7 @@ jobs:
       if: steps.filter.outputs.src == 'true'
       uses: actions/cache@v4
       with:
-        path: ~/.tox
+        path: .tox
         key: ${{ runner.os }}-tox-${{ hashFiles('**/requirements*.txt', '**/setup.py', '**/pyproject.toml', '**/tox.ini') }}
 
     - name: List tox cache 
