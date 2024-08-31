@@ -5,16 +5,16 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "sphinx-termynal"
 dynamic = ["version"]
-description = "A lightweight and modern animated terminal window for Sphinx"
+description = "Animated terminal window for Sphinx"
 authors = [{ name = "Prajeesh Ag", email = "prajeeshag@gmail.com" }]
 license = { file = "LICENSE" }
 readme = "README.md"
 dependencies = ["sphinx"]
 
 [project.urls]
-homepage = "https://prajeeshag.github.io/sphinx-termynal"
+homepage = "https://sphinx-termynal.prajeeshag.com"
 repository = "https://github.com/prajeeshag/sphinx-termynal"
-documentation = "https://prajeeshag.github.io/sphinx-termynal"
+documentation = "https://sphinx-termynal.prajeeshag.com"
 
 [tool.setuptools.packages.find]
 where = ["src"]

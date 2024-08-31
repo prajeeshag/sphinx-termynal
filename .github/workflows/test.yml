@@ -33,6 +33,17 @@ jobs:
       with:
         python-version: '3.12'
 
+    - name: Cache tox
+      if: steps.filter.outputs.src == 'true'
+      uses: actions/cache@v4
+      with:
+        path: ~/.tox
+        key: ${{ runner.os }}-tox-${{ hashFiles('**/requirements*.txt', '**/setup.py', '**/pyproject.toml', '**/tox.ini') }}
+
+    - name: List tox cache 
+      # This step lists the files within the .tox directory to manually inspect the cached contents
+      run: ls -R .tox || echo "No .tox directory found"
+
     - name: Install tox and run tests
       if: steps.filter.outputs.src == 'true'
       run: |
