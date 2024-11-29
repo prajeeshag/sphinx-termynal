@@ -22,7 +22,7 @@ pip install sphinx-termynal
    ```python
    extensions = [
        ...
-       'sphynx_termynal',
+       "sphinx_termynal",
        ...
    ]
    
