@@ -20,7 +20,7 @@ Create animated terminal window in your [Sphinx](https://www.sphinx-doc.org) doc
 ```{code-block} python
    extensions = [
        ...
-       'sphynx_termynal',
+       "sphynx_terminal",
        ...
    ]
 ```
