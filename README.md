@@ -7,7 +7,7 @@ ___
 [![codecov](https://codecov.io/gh/prajeeshag/sphinx-termynal/graph/badge.svg?token=UNNUW30IQL)](https://codecov.io/gh/prajeeshag/sphinx-termynal)
 ![Doc Build Status](https://github.com/prajeeshag/sphinx-termynal/actions/workflows/build-docs.yml/badge.svg)
 
-**Documentation**: [https://prajeesh-ag.com/sphinx-termynal](https://prajeesh-ag.com/sphinx-termynal)
+**Documentation**: [https://prajeesh-ag.com/sphinx-termynal](https://prajeesh-ag.com/sphinx-termynal/)
 
 ___
 
@@ -48,7 +48,7 @@ This will produce the following terminal animation:
 ![Animation1](./animation1.gif)
 
 
-Fore more examples check the [Documentation](https://prajeesh-ag.com/sphinx-termynal) 
+Fore more examples check the [Documentation](https://prajeesh-ag.com/sphinx-termynal/) 
 
 ## Credits
 
