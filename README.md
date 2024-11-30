@@ -1,3 +1,5 @@
+___
+
 # Sphinx Termynal
 
 ![PyPI - Version](https://img.shields.io/pypi/v/sphinx-termynal)
@@ -5,7 +7,12 @@
 [![codecov](https://codecov.io/gh/prajeeshag/sphinx-termynal/graph/badge.svg?token=UNNUW30IQL)](https://codecov.io/gh/prajeeshag/sphinx-termynal)
 ![Doc Build Status](https://github.com/prajeeshag/sphinx-termynal/actions/workflows/build-docs.yml/badge.svg)
 
+**Documentation**: [https://prajeesh-ag.com/sphinx-termynal](https://prajeesh-ag.com/sphinx-termynal)
+
+___
+
 ![Animation1](./animation1.gif)
+
 
 Create animated terminal window in your [Sphinx](https://www.sphinx-doc.org) documentation.
 
@@ -34,10 +41,14 @@ You can now use it in your .rst files. For example:
    $ pip install sphinx-termynal
    -->
    sphinx-termynal installed
+
 ```
 This will produce the following terminal animation:
 
 ![Animation1](./animation1.gif)
+
+
+Fore more examples check the [Documentation](https://prajeesh-ag.com/sphinx-termynal) 
 
 ## Credits
 
