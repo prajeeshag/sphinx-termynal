@@ -48,7 +48,7 @@ This will produce the following terminal animation:
 ![Animation1](./animation1.gif)
 
 
-Fore more examples check the [Documentation](https://prajeesh-ag.com/sphinx-termynal/) 
+For more examples check the [Documentation](https://prajeesh-ag.com/sphinx-termynal/) 
 
 ## Credits
 
